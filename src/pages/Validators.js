@@ -24,9 +24,9 @@ function Home () {
 
     return (
         <div className='bg-[#1A1A1A] h-screen w-full overflow-auto'>
-            {/* <div className='w-full h-20'></div> */}
+            <div className='w-full h-20'></div>
             <div className='w-full flex items-center justify-between p-4 space-x-6'>
-                <div className='w-full bg-black text-white p-6 rounded-md overflow-x-auto'>
+                <div className='w-full bg-black text-white p-6 rounded-md overflow-x-scroll'>
                     <div>
                         <div className='text-xl'>Validators</div>
                         <div className='text-gray-500'>Top Validators</div>
@@ -39,7 +39,7 @@ function Home () {
                         </div>
                         <div>
                             {
-                                JSON.stringify(validatorData) !== '{}' && validatorData !== 'undefined' ? validatorData["validators"].map(element => {
+                                JSON.stringify(validatorData) !== '{}' && validatorData !== undefined ? validatorData["validators"].map(element => {
                                     return (
                                         <ValidatorPane _validatorData={element}/>
                                     )
