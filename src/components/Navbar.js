@@ -23,7 +23,7 @@ function Navbar () {
         <div>
             {
                 showTab ?
-                    <div className='px-4 h-screen bg-black space-y-10 w-80 border fixed'>
+                    <div className='z-10 px-4 h-screen bg-black space-y-10 w-80 border fixed'>
                         <div className="flex-none flex items-center justify-center text-center py-6 space-x-6">
                             <button onClick={() => setShowTab(false)} className="rounded p-1.5 bg-white">
                                 <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -45,11 +45,11 @@ function Search () {
                         <div className='flex justify-between py-6'>
                             <div>
                                 <div className='text-gray-400'>Transaction Hash</div>
-                                <div>#{txnData["txn_hash"]}</div>
+                                <div>{txnData["txn_hash"]}</div>
                             </div>
                             <div>
                                 <div className='text-gray-400'>Block Height</div>
-                                <div>{txnData["block_height"]}</div>
+                                <button onClick={() => {navigate('/search/' + txnData['block_height'])}} className='text-[#FFFF00] underline'>#{txnData["block_height"]}</button>
                             </div>
                         </div>
                         <div className='flex justify-between py-6'>
@@ -145,7 +145,7 @@ function Search () {
                                 blockData["txn_hash"] !== undefined ? blockData["txn_hash"].map(element => {
                                     return (
                                         <div className='flex items-center justify-between w-full border-t border-gray-500 py-4'>
-                                            <div className='text-[14px] w-80 truncate'>{element["hash_id"]}</div>
+                                            <button onClick={() => {navigate('/search/' + element['hash_id'])}} className='text-[#FFFF00] underline text-[14px] w-80 truncate'>{element["hash_id"]}</button>
                                             <div className='text-[14px]'>#{blockData["block_height"]}</div>
                                             <div>{element["tx_type"]}</div>
                                          </div>
@@ -160,9 +160,9 @@ function Search () {
     }
 
     return (
-        <div className="bg-[#1A1A1A] h-full w-full">
-             <div className='w-full h-20'></div>
-            <div className='w-full py-4'>
+        <div className="bg-[#1A1A1A] h-screen w-full overflow-auto">
+            <div className='w-full h-20'></div>
+            <div className='z-0 w-full py-4'>
                 <form class="flex items-center max-w-lg mx-auto">   
                     <label for="voice-search" class="sr-only">Search</label>
                     <div class="relative w-full">
@@ -178,7 +178,7 @@ function Search () {
                     </button>
                 </form>
             </div>
-            <div className='grow w-full'>
+            <div className='w-full'>
                 {
                     id !== undefined ? 
                         isNaN(id) ?
